@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css links -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <title>Dynamic Online Color Picker Application</title>
+</head>
+
+<body id="docBody">
+    <h2 class="mt-5 headingStyle text-center">Pick your favourite color</h2>
+
+    <div class="color_picker_application_wrapper_main">
+        <div class="color_picker_application_box">
+            <div class="flex_item_wrapper d-flex justify-content-between align-items-center">
+                <div class="left_item">
+                    <h4>Display color</h4>
+                </div>
+                <div class="right_item">
+                    <button class="eventBtnStyle" id="randomColor">Generate random color</button>
+                </div>
+            </div>
+            <div class="divider"></div>
+
+            <div class="display_color" id="displayColor"></div>
+
+            <div class="flex_item_wrapper d-flex justify-content-between align-items-center">
+                <div class="left_item">
+                    <h4>Chnage & copy color code</h4>
+                </div>
+                <div class="right_item">
+                    <button class="eventBtnStyle" id="saveColor">Save color</button>
+                </div>
+                <div class="right_item">
+                    <button class="eventBtnStyle" id="copyColorCode">Copy color</button>
+                </div>
+            </div>
+            <div class="divider"></div>
+
+            <div class="select_copy_mood_wrapper d-flex justify-content-between align-items-center">
+                <div class="left_item">
+                    <h4>Select copy mood</h4>
+                </div>
+                <div class="right_select_mood_wrapper d-flex gap-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="color-mood" id="colorMoodHex" value="hex">
+                        <label class="form-check-label" for="colorMoodHex">
+                            HEX
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="color-mood" id="colorMoodRgb" value="rgb"
+                            checked>
+                        <label class="form-check-label" for="colorMoodRgb">
+                            RGB
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="input_field_wrapper d-flex gap-2 my-2">
+                <div class="input_field_item">
+                    <label class="w-100" for="hexInputField">HEX</label>
+                    <div class="d-flex align-items-center">
+                        <div class="input_icon">#</div>
+                        <input class="input_field_style" type="text" id="hexInputField" value="D2DEE9">
+                    </div>
+                    <span id="errorAlert"></span>
+                </div>
+                <div class="input_field_item">
+                    <label class="w-100" for="">RGB</label>
+                    <input class="input_field_style" type="text" id="rgbInputField" value="rgb(210, 222, 233)" disabled>
+
+                </div>
+            </div>
+
+            <div class="left_item mb-2">
+                <h4>Adjust RGB Color</h4>
+            </div>
+            <div class="flex_item_wrapper d-flex gap-3">
+                <div class="color_range_item">
+                    <div class="range_label_wrapper d-flex justify-content-between">
+                        <label for="red" class="form-label">Red</label>
+                        <span id="colorSliderRedLabel">210</span>
+                    </div>
+                    <input type="range" class="form-range" id="colorSliderRed" min="0" max="255" value="210">
+                </div>
+                <div class="color_range_item">
+                    <div class="range_label_wrapper d-flex justify-content-between">
+                        <label for="red" class="form-label">Green</label>
+                        <span id="colorSliderGreenLabel">222</span>
+                    </div>
+                    <input type="range" class="form-range" id="colorSliderGreen" min="0" max="255" value="222">
+                </div>
+                <div class="color_range_item">
+                    <div class="range_label_wrapper d-flex justify-content-between">
+                        <label for="red" class="form-label">Blue</label>
+                        <span id="colorSliderBlueLabel">233</span>
+                    </div>
+                    <input type="range" class="form-range" id="colorSliderBlue" min="0" max="255" value="233">
+                </div>
+
+
+            </div>
+
+            <div class="divider"></div>
+            <div class="left_item mt-2">
+                <h4>Default preset colors</h4>
+            </div>
+            <div class="display_preset_colors" id="presetsColor">
+
+            </div>
+
+            <div class="divider"></div>
+            <div class="left_item d-flex justify-content-between mt-2">
+                <h4>Custom preset color</h4>
+            </div>
+            <div class="display_preset_colors" id="customColors">
+
+            </div>
+            <div class="divider"></div>
+            <div class="background_preferences_wrapper d-flex gap-3">
+                <div class="bg_pre_item">
+                    <h4>Background preference</h4>
+                    <div class="bg_image_preview" id="bg_image_preview"></div>
+                    <div class="bg_control">
+                        <input type="file" accept="image/*" class="file_input" id="bg_file_input">
+                    </div>
+                    <button class="bg_input_file_btn" id="bg_input_file_btn_delete">Delete</button>
+                    <button class="bg_input_file_btn" id="bg_input_file_btn">Upload</button>
+
+                </div>
+                <div class="bg_pre_item">
+
+                    <div id="background_control_panel">
+                        <h4>Controll background</h4>
+                        <div class="select_group_item">
+                            <label for="bgSize">Background size</label>
+                            <select class="form-select" id="bgSize" name="bgSize">
+                                <option value="auto">Auto</option>
+                                <option value="inherit">Inherit</option>
+                                <option value="contain">Contain</option>
+                                <option value="cover">Cover</option>
+                            </select>
+                        </div>
+                        <div class="select_group_item">
+                            <label for="bgRepeat">Background repeat</label>
+                            <select class="form-select" id="bgRepeat" name="bgRepeat">
+                                <option value="repeat">Repeat</option>
+                                <option value="no-repeat">No Repeat</option>
+                            </select>
+                        </div>
+                        <div class="select_group_item">
+                            <label for="bgPosition">Background position</label>
+                            <select class="form-select" id="bgPosition" name="bgPosition">
+                                <option value="top">Top</option>
+                                <option value="bottom">Bottom</option>
+                                <option value="left">Left</option>
+                                <option value="right">Right</option>
+                                <option value="center">Center</option>
+
+                            </select>
+                        </div>
+                        <div class="select_group_item">
+                            <label for="bgAttachment">Background attachment</label>
+                            <select class="form-select" id="bgAttachment" name="bgAttachment">
+                                <option value="scroll">Scroll</option>
+                                <option value="fixed">Fixed</option>
+
+
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

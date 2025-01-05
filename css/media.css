@@ -1,0 +1,61 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .color_picker_application_box {
+        padding: 1rem;
+        width: 100%;
+    }
+    .display_color {
+        height: 140px;
+    }
+    .display_preset_colors .color_box {
+        width: 105px;
+        height: 40px;
+    }
+    .left_item h4 {
+        font-size: .8rem;
+    }
+    .bg_pre_item h4 {
+        font-size: .8rem;
+    }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .color_picker_application_box {
+        padding: 1rem;
+        width: 100%;
+    }
+    .display_color {
+        height: 150px;
+    }
+    .display_preset_colors .color_box {
+        width: 178px;
+        height: 50px;
+    }
+    .left_item h4 {
+        font-size: .9rem;
+    }
+    .bg_pre_item h4 {
+        font-size: .9rem;
+    }
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+   
+ }
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    
+ }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) { 
+   
+ }
+
+ /* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+
+ }
