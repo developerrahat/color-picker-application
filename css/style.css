@@ -144,10 +144,12 @@
   display: flex;
   flex-wrap: wrap;
   grid-gap: 5px;
+  column-count: 3;
+  width: 100%;
 }
 
 .display_preset_colors .color_box {
-  width: 146px;
+  width: 19.33%;
   height: 60px;
   border-radius: 4px;
   cursor: pointer;
